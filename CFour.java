@@ -140,7 +140,7 @@ public class CFour
 		return full;
 	}
 
-	public int whatsInside(int row,int column){
+	public int get(int row,int column){
 		if(board[row][column]!=null){
 			return board[row][column];
 		}else{
@@ -151,7 +151,7 @@ public class CFour
 	public void move(int column){
 		if(!isFull(column)){
 			for(int i = 0;i<NUM_COLS;i++){
-				if(whatsInside(i,column) == -1){
+				if(get(i,column) == -1){
 					board[i][column] = currentPlayer.getID();
 					this.mostRecentRow = i;
 					break;
