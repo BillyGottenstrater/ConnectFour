@@ -6,7 +6,9 @@ To create a connect four application that lets players have profiles and tracks 
 * Created a player class with name, id, and wins property (UNTESTED)
 * Created a board that Doesn't do anything (UNTESTED)
 * Added text files to store player profiles
+
 ##Todo:
+
 * Make the game work
 * Establish GUI with click and keyboard inputs
 * Change player to track losses to each player (Not quite sure how yet)
