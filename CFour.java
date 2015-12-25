@@ -11,17 +11,17 @@ public class CFour
 	public Integer mostRecentRow;
 
 
-	public CFour(String player0Name,String player1Name){
-		this.player0 = new Player(player0Name,0);
-		this.player1 = new Player(player1Name,1);
+	public CFour(Player player0 ,Player player1){
+		this.player0 = player0;
+		this.player1 = player1;
 		currentPlayer = player0;
 		this.board = new Integer[NUM_ROWS][NUM_COLS]; // 6 rows, 7 columns
 		this.turn = 1;
 		this.mostRecentColumn = null;
 		this.mostRecentRow = null;
 	}
-	/* Should it simply tell the win
-	*/
+
+	//Checks if the most recent play created a win for the player that made that move
 	public int checkWin(){
 		int count;
 		int topCount;
@@ -127,6 +127,8 @@ public class CFour
 
 
 	}
+
+	//Checks if a column is full
 	public boolean isFull(int column){
 		boolean full = true;
 		for(int i = 0;i<NUM_COLS;i++){
@@ -140,6 +142,16 @@ public class CFour
 		return full;
 	}
 
+	//Changes the player
+	public void switchPlayer(){
+		if(currentPlayer == player0){
+			currentPlayer = player1;
+		}else{
+			currentPlayer = player0;
+		}
+	}
+
+	// returns the value of a given space (0 or 1, or -1 if null)
 	public int get(int row,int column){
 		if(board[row][column]!=null){
 			return board[row][column];
@@ -148,6 +160,7 @@ public class CFour
 		}
 	}
 
+	//Changes the value of the bottom empty space where the player clicks to the current player
 	public void move(int column){
 		if(!isFull(column)){
 			for(int i = 0;i<NUM_COLS;i++){
@@ -158,6 +171,7 @@ public class CFour
 				}
 			}
 			this.mostRecentColumn = column;
+			this.switchPlayer();
 		}else{
 			System.out.println("The column is full");
 		}
