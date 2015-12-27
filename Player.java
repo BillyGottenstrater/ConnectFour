@@ -10,5 +10,17 @@ public class Player
 		this.id = id;
 	}
 
-	public int getID(){return this.id;}
+	public int getID(){
+		return this.id;
+	}
+
+	public void setID(int id){
+		this.id = id; 
+	}
+
+	public String getName(){
+		return this.name;
+	}
+
+
 }

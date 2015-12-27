@@ -7,11 +7,11 @@ public class CFour
 	private Player player1;
 	private Player currentPlayer;
 	private Integer[][] board;
-	public Integer mostRecentColumn;
-	public Integer mostRecentRow;
+	private Integer mostRecentColumn;
+	private Integer mostRecentRow;
 
 
-	public CFour(Player player0 ,Player player1){
+	public CFour(Player player0, Player player1){
 		this.player0 = player0;
 		this.player1 = player1;
 		currentPlayer = player0;
@@ -171,7 +171,6 @@ public class CFour
 				}
 			}
 			this.mostRecentColumn = column;
-			this.switchPlayer();
 		}else{
 			System.out.println("The column is full");
 		}
