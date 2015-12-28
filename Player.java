@@ -22,5 +22,9 @@ public class Player
 		return this.name;
 	}
 
+	public void incrementWins(){
+		this.wins = this.wins+1;
+	}
+
 
 }
